@@ -71,7 +71,8 @@ class _MyProjectsState extends State<MyProjects> {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
-              myProj('Flutter', 'Click 2 Code', 'An online Code'),
+              myProj(
+                  'Html, Css, Javascript', 'Ecommerce', 'Carrito de Compras'),
               myProj('Flutter', 'Click 2 Code', 'An online Code'),
               myProj('Flutter', 'Click 2 Code', 'An online Code'),
               myProj('Flutter', 'Click 2 Code', 'An online Code'),

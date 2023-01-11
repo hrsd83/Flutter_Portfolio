@@ -6,6 +6,7 @@ import 'package:portfolio_henry/widgets/custom_page_route.dart';
 import 'package:sliding_sheet/sliding_sheet.dart';
 import 'package:animate_do/animate_do.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 class MyHome extends StatefulWidget {
   const MyHome({super.key});
@@ -73,10 +74,14 @@ class _MyHomeState extends State<MyHome> {
   @override
   Widget build(BuildContext context) {
     SystemChrome.setPreferredOrientations(
-        [DeviceOrientation.portraitUp, DeviceOrientation.portraitDown]);
+        [DeviceOrientation.portraitDown, DeviceOrientation.portraitUp]);
+
+    // WidgetsFlutterBinding.ensureInitialized();
+    // SystemChrome.setPreferredOrientations(
+    //     [DeviceOrientation.portraitUp, DeviceOrientation.portraitDown]);
 
     return Scaffold(
-      //fondo de Background
+      // fondo de Background
       backgroundColor: Colors.black,
       extendBodyBehindAppBar: true,
       appBar: AppBar(
@@ -88,9 +93,12 @@ class _MyHomeState extends State<MyHome> {
                   PopupMenuItem(
                     value: 1,
                     child: TextButton(
-                      child: const Text(
+                      child: Text(
                         'Projects',
-                        style: TextStyle(color: Colors.white),
+                        style: GoogleFonts.alegreya(
+                          textStyle: const TextStyle(
+                              color: Colors.white, fontSize: 18),
+                        ),
                       ),
                       onPressed: () {
                         Navigator.of(context)
@@ -102,9 +110,12 @@ class _MyHomeState extends State<MyHome> {
                   PopupMenuItem(
                     value: 2,
                     child: TextButton(
-                      child: const Text(
+                      child: Text(
                         'About',
-                        style: TextStyle(color: Colors.white),
+                        style: GoogleFonts.alegreya(
+                          textStyle: const TextStyle(
+                              color: Colors.white, fontSize: 18),
+                        ),
                       ),
                       onPressed: () {
                         Navigator.of(context)
@@ -135,24 +146,17 @@ class _MyHomeState extends State<MyHome> {
               Container(
                 alignment: Alignment.center,
                 margin: EdgeInsets.only(
-                    top: MediaQuery.of(context).size.height * 0.49),
+                    top: MediaQuery.of(context).size.height * 0.45),
                 child: Column(
-                  children: const [
-                    Text(
-                      'Henry Sánchez',
-                      style: TextStyle(
-                          fontFamily: "AG_Helvética",
-                          color: Colors.white,
-                          fontSize: 30,
-                          fontWeight: FontWeight.bold),
-                    ),
-                    Text(
-                      'Software Developer',
-                      style: TextStyle(
-                          fontFamily: "AG_Helvética",
-                          color: Colors.white,
-                          fontSize: 20),
-                    ),
+                  children: [
+                    Text('Henry Sánchez',
+                        style: GoogleFonts.alegreya(
+                            textStyle:
+                                TextStyle(fontSize: 30, color: Colors.white))),
+                    Text('Software Developer',
+                        style: GoogleFonts.alegreya(
+                            textStyle:
+                                TextStyle(fontSize: 30, color: Colors.white))),
                   ],
                 ),
               )
