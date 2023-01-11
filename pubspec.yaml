@@ -30,15 +30,19 @@ dependencies:
   animate_do: ^3.0.2
   animated_background: ^2.0.0
   cupertino_icons: ^1.0.2
-  flare_flutter: ^3.0.2
+  font_awesome_flutter: '>= 4.7.0'
+  url_launcher: ^6.1.7
+  
+  
   flutter:
     sdk: flutter
-  particles_flutter: ^0.1.4
+
 
 dev_dependencies:
   flutter_lints: ^2.0.0
   flutter_test:
     sdk: flutter
+
   sliding_sheet: ^0.5.2
 
 # For information on the generic Dart part of this file, see the
@@ -64,10 +68,10 @@ flutter:
   # "family" key with the font family name, and a "fonts" key with a
   # list giving the asset and other descriptors for the font. For
   # example:
-  # fonts:
-  #   - family: Schyler
-  #     fonts:
-  #       - asset: fonts/Schyler-Regular.ttf
+  fonts:
+    - family: AG_Helvética
+      fonts:
+        - asset: fonts/AG_Helv├®tica.ttf
   #       - asset: fonts/Schyler-Italic.ttf
   #         style: italic
   #   - family: Trajan Pro

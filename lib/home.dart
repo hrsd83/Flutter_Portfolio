@@ -1,7 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:portfolio_henry/about.dart';
+import 'package:portfolio_henry/projects.dart';
+import 'package:portfolio_henry/widgets/custom_page_route.dart';
 import 'package:sliding_sheet/sliding_sheet.dart';
 import 'package:animate_do/animate_do.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
 class MyHome extends StatefulWidget {
   const MyHome({super.key});
@@ -25,12 +29,13 @@ class _MyHomeState extends State<MyHome> {
     );
   }
 
-  mySpecialized(icon, tecnol) {
+  mySpecialized(icon, tecnol, col) {
     return Container(
       margin: EdgeInsets.all(0.8),
       width: 105,
       height: 115,
-      child: BounceInUp(
+      child: Container(
+        //BounceInUp
         child: Card(
           margin: const EdgeInsets.all(5),
           color: Colors.black87,
@@ -38,10 +43,15 @@ class _MyHomeState extends State<MyHome> {
             borderRadius: BorderRadius.circular(15),
           ),
           child: Container(
+            margin: EdgeInsets.only(top: 6),
             child: Column(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                Icon(icon),
+                Icon(
+                  icon,
+                  color: col,
+                  size: 45,
+                ),
                 const SizedBox(
                   height: 10,
                 ),
@@ -49,7 +59,7 @@ class _MyHomeState extends State<MyHome> {
                   margin: EdgeInsets.only(bottom: 25),
                   child: Text(
                     tecnol,
-                    style: const TextStyle(color: Colors.white, fontSize: 16),
+                    style: const TextStyle(color: Colors.white, fontSize: 14),
                   ),
                 )
               ],
@@ -70,6 +80,39 @@ class _MyHomeState extends State<MyHome> {
       backgroundColor: Colors.black,
       extendBodyBehindAppBar: true,
       appBar: AppBar(
+        leading: PopupMenuButton(
+            iconSize: 30,
+            color: Colors.black,
+            icon: const Icon(Icons.menu),
+            itemBuilder: (context) => [
+                  PopupMenuItem(
+                    value: 1,
+                    child: TextButton(
+                      child: const Text(
+                        'Projects',
+                        style: TextStyle(color: Colors.white),
+                      ),
+                      onPressed: () {
+                        Navigator.of(context)
+                            .push(CustomPageRoute(child: const MyProjects()));
+                        // Navigator.pushNamed(context, 'projects');
+                      },
+                    ),
+                  ),
+                  PopupMenuItem(
+                    value: 2,
+                    child: TextButton(
+                      child: const Text(
+                        'About',
+                        style: TextStyle(color: Colors.white),
+                      ),
+                      onPressed: () {
+                        Navigator.of(context)
+                            .push(CustomPageRoute(child: const MyAbout()));
+                      },
+                    ),
+                  )
+                ]),
         elevation: 0,
         backgroundColor: Colors.transparent,
       ),
@@ -98,13 +141,17 @@ class _MyHomeState extends State<MyHome> {
                     Text(
                       'Henry Sánchez',
                       style: TextStyle(
+                          fontFamily: "AG_Helvética",
                           color: Colors.white,
                           fontSize: 30,
                           fontWeight: FontWeight.bold),
                     ),
                     Text(
                       'Software Developer',
-                      style: TextStyle(color: Colors.white, fontSize: 20),
+                      style: TextStyle(
+                          fontFamily: "AG_Helvética",
+                          color: Colors.white,
+                          fontSize: 20),
                     ),
                   ],
                 ),
@@ -144,9 +191,12 @@ class _MyHomeState extends State<MyHome> {
                         Row(
                           mainAxisAlignment: MainAxisAlignment.spaceBetween,
                           children: [
-                            mySpecialized(null, 'HTML'),
-                            mySpecialized(null, 'CSS'),
-                            mySpecialized(null, 'JavasScript'),
+                            mySpecialized(FontAwesomeIcons.html5, 'HTML',
+                                Colors.orange[700]),
+                            mySpecialized(FontAwesomeIcons.css3Alt, 'CSS',
+                                Colors.blue[500]),
+                            mySpecialized(FontAwesomeIcons.js, 'JavasScript',
+                                Colors.yellow[400]),
                           ],
                         ),
                         const SizedBox(
@@ -156,14 +206,17 @@ class _MyHomeState extends State<MyHome> {
                           mainAxisAlignment: MainAxisAlignment.start,
                           children: [
                             mySpecialized(
-                              null,
+                              Icons.flutter_dash,
                               'Flutter',
+                              Colors.blue[400],
                             ),
                             mySpecialized(
-                              null,
-                              'Git &\nGitHub',
+                              FontAwesomeIcons.git,
+                              'Git',
+                              Colors.orange[700],
                             ),
-                            mySpecialized(null, 'VisualStudio'),
+                            mySpecialized(FontAwesomeIcons.github, 'GitHub',
+                                Colors.purple[700]),
                           ],
                         ),
                         SizedBox(
@@ -173,10 +226,17 @@ class _MyHomeState extends State<MyHome> {
                           mainAxisAlignment: MainAxisAlignment.start,
                           children: [
                             mySpecialized(
-                              null,
-                              'FireBase',
+                              Icons.code,
+                              'VisualStudio',
+                              Colors.blue,
                             ),
-                            mySpecialized(null, 'Postman'),
+                            mySpecialized(
+                                Icons.data_array, 'Firebase', Colors.yellow),
+                            mySpecialized(
+                              Icons.data_array_rounded,
+                              'Postman',
+                              Colors.orange,
+                            ),
                           ],
                         )
                       ],
