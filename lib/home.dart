@@ -1,12 +1,4 @@
-import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
-import 'package:portfolio_henry/about.dart';
-import 'package:portfolio_henry/projects.dart';
-import 'package:portfolio_henry/widgets/custom_page_route.dart';
-import 'package:sliding_sheet/sliding_sheet.dart';
-import 'package:animate_do/animate_do.dart';
-import 'package:font_awesome_flutter/font_awesome_flutter.dart';
-import 'package:google_fonts/google_fonts.dart';
+import 'Screens/screens.dart';
 
 class MyHome extends StatefulWidget {
   const MyHome({super.key});
@@ -73,13 +65,6 @@ class _MyHomeState extends State<MyHome> {
 
   @override
   Widget build(BuildContext context) {
-    SystemChrome.setPreferredOrientations(
-        [DeviceOrientation.portraitDown, DeviceOrientation.portraitUp]);
-
-    // WidgetsFlutterBinding.ensureInitialized();
-    // SystemChrome.setPreferredOrientations(
-    //     [DeviceOrientation.portraitUp, DeviceOrientation.portraitDown]);
-
     return Scaffold(
       // fondo de Background
       backgroundColor: Colors.black,

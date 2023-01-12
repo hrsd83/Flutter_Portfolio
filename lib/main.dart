@@ -1,9 +1,10 @@
-import 'package:flutter/material.dart';
-import 'package:portfolio_henry/about.dart';
-import 'package:portfolio_henry/home.dart';
-import 'package:portfolio_henry/projects.dart';
+import 'Screens/screens.dart';
 
 void main() {
+  WidgetsFlutterBinding.ensureInitialized();
+  SystemChrome.setPreferredOrientations(
+      [DeviceOrientation.portraitUp, DeviceOrientation.portraitDown]);
+
   runApp(MaterialApp(
     initialRoute: 'about',
     debugShowCheckedModeBanner: false,

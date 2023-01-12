@@ -1,10 +1,4 @@
-import 'package:flutter/material.dart';
-import 'package:font_awesome_flutter/font_awesome_flutter.dart';
-import 'package:animate_do/animate_do.dart';
-import 'package:portfolio_henry/home.dart';
-import 'package:portfolio_henry/widgets/custom_page_route.dart';
-import 'package:url_launcher/url_launcher.dart';
-import 'package:url_launcher/url_launcher_string.dart';
+import 'Screens/screens.dart';
 
 class MyAbout extends StatefulWidget {
   const MyAbout({super.key});
@@ -97,7 +91,7 @@ class _MyAboutState extends State<MyAbout> {
                   ),
                   BounceInUp(
                     child: Row(
-                      mainAxisAlignment: MainAxisAlignment.center,
+                      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                       children: [
                         IconButton(
                           onPressed: () {
