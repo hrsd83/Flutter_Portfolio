@@ -1,3 +1,4 @@
+import 'package:flutter/material.dart';
 import 'Screens/screens.dart';
 
 class MyHome extends StatefulWidget {
@@ -8,20 +9,6 @@ class MyHome extends StatefulWidget {
 }
 
 class _MyHomeState extends State<MyHome> {
-  myArchives(type) {
-    return Row(
-      children: [
-        Container(
-          margin: const EdgeInsets.only(top: 10),
-          child: Text(
-            type,
-            style: const TextStyle(fontSize: 25, fontWeight: FontWeight.w900),
-          ),
-        )
-      ],
-    );
-  }
-
   mySpecialized(icon, tecnol, col) {
     return Container(
       margin: EdgeInsets.all(0.8),
@@ -87,7 +74,7 @@ class _MyHomeState extends State<MyHome> {
                       ),
                       onPressed: () {
                         Navigator.of(context)
-                            .push(CustomPageRoute(child: const MyProjects()));
+                            .push(CustomPageRoute(child: FoldCardMain()));
                         // Navigator.pushNamed(context, 'projects');
                       },
                     ),

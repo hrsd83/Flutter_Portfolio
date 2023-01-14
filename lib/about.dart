@@ -1,3 +1,4 @@
+import 'package:flutter/material.dart';
 import 'Screens/screens.dart';
 
 class MyAbout extends StatefulWidget {
@@ -29,18 +30,16 @@ class _MyAboutState extends State<MyAbout> {
         blendMode: BlendMode.dstIn,
         child: Stack(
           children: [
-            BounceInUp(
-              child: Container(
-                  color: Colors.black,
-                  margin: EdgeInsets.only(top: 30),
-                  width: double.infinity,
-                  height: MediaQuery.of(context).size.height * 0.45,
-                  child: Image.asset(
-                    'assets/FotoPerfil3.png',
-                    height: 400,
-                    fit: BoxFit.contain,
-                  )),
-            ),
+            Container(
+                color: Colors.black,
+                margin: EdgeInsets.only(top: 30),
+                width: double.infinity,
+                height: MediaQuery.of(context).size.height * 0.45,
+                child: Image.asset(
+                  'assets/FotoPerfil3.png',
+                  height: 400,
+                  fit: BoxFit.contain,
+                )),
             Container(
               alignment: Alignment.center,
               margin: EdgeInsets.only(
