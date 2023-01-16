@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'Screens/screens.dart';
+import 'screens.dart';
 
 class MyHome extends StatefulWidget {
   const MyHome({super.key});
@@ -11,39 +11,36 @@ class MyHome extends StatefulWidget {
 class _MyHomeState extends State<MyHome> {
   mySpecialized(icon, tecnol, col) {
     return Container(
-      margin: EdgeInsets.all(0.8),
+      margin: const EdgeInsets.all(0.8),
       width: 105,
       height: 115,
-      child: Container(
-        //BounceInUp
-        child: Card(
-          margin: const EdgeInsets.all(5),
-          color: Colors.black87,
-          shape: RoundedRectangleBorder(
-            borderRadius: BorderRadius.circular(15),
-          ),
-          child: Container(
-            margin: EdgeInsets.only(top: 6),
-            child: Column(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                Icon(
-                  icon,
-                  color: col,
-                  size: 45,
+      child: Card(
+        margin: const EdgeInsets.all(5),
+        color: Colors.black87,
+        shape: RoundedRectangleBorder(
+          borderRadius: BorderRadius.circular(15),
+        ),
+        child: Container(
+          margin: const EdgeInsets.only(top: 6),
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              Icon(
+                icon,
+                color: col,
+                size: 45,
+              ),
+              const SizedBox(
+                height: 10,
+              ),
+              Container(
+                margin: EdgeInsets.only(bottom: 25),
+                child: Text(
+                  tecnol,
+                  style: const TextStyle(color: Colors.white, fontSize: 14),
                 ),
-                const SizedBox(
-                  height: 10,
-                ),
-                Container(
-                  margin: EdgeInsets.only(bottom: 25),
-                  child: Text(
-                    tecnol,
-                    style: const TextStyle(color: Colors.white, fontSize: 14),
-                  ),
-                )
-              ],
-            ),
+              )
+            ],
           ),
         ),
       ),
